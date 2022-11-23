@@ -394,6 +394,7 @@ export const CollapsibleTable = ({ pipelineruns }: DenseTableProps) => {
 
 
 export const TektonDashboardFetchComponent = () => {
+  // TODO: we need to refactor this component, so that we don't have to render it in test app, since this will be slower
   const config = useApi(configApiRef)
   const { entity } = useEntity();
   const tektonBuildNamespace = entity?.metadata.annotations?.[TEKTON_PIPELINES_BUILD_NAMESPACE] ?? '';
